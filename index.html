@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='author' content='Cristyan Morales, Nelzeus Herrera, Eduardo Suárez'>
+<meta name='description' content='descripcion'>
+<title>Formularios</title>
+ <!-- CSS de Bootstrap 5 -->
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' ,integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+ <!-- Iconos de Bootstrap 5 -->
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css'>
+<!-- CSS personalizado -->
+<link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+<div class='container p-5'>
+    <section>
+        <header>
+            <h1>Formulario de registro</h1>
+            <br>
+        </header>  
+
+    <form action="" method="post" class="form-control">
+        <fieldset>
+            <legend>Información Personal:</legend>
+            <label>Nombre: </label><input type="text" name="nom" id="nom" class="form-control" onfocusout="validarTexto(0,allRegExp.soloTexto)" required>
+            <label>Apellidos: </label><input type="text" name="ape" id="ape" class="form-control" onfocusout="validarTexto(1,allRegExp.soloTexto)" required>
+            <label>Password: </label><input type="password" name="psw" id="psw" class="form-control" onfocusout="validarTexto(2,allRegExp.password)" >
+            <label>CP: </label><input type="text" name="cp" id="cp" class="form-control" onfocusout="validarTexto(3,allRegExp.codigoValido)" >
+            <label>Color Favorito: </label><input type="color" name="favcolor" id="favcolor" class="form-control" value="#ff0000">
+            <label>Fecha de Nacimiento: </label><input type="date" name="cum" id="cum"class="form-control" onfocusout="calcularEdad()" >
+            <label>Email: </label><input type="email" name="email" id="email"class="form-control" onfocusout="validarTexto(6,allRegExp.gmail)" >
+            <label>Foto: </label><input type="file" name="fil" id="fil"class="form-control" >
+            <label>Calificación: </label><input type="number" name="cal" id="cal" class="form-control" onfocusout="validarCalif(8)">
+           <textareaclass="form-control"  rows="10" cols="25"> Tu opinion cuenta</textarea>   
+            <h3>Sexo</h3>
+            <input type="radio" name="sex" id="sexo" class="form-check-input" value="hombre" checked> Hombre<br>
+            <input type="radio" name="sex" id="sexo" class="form-check-input" value="mujer"> Mujer<br>
+            <input type="radio" name="sex" id="sexo" class="form-check-input" value="no"> Prefiero no decirlo<br><br>
+            <h3>Selecciona tu móvil</h3>
+            <select class="form-select" name="movil" id="movil">
+                <option value="iphone">Iphone</option>
+                <option value="samsung">Samsung</option>
+                <option value="huawei">Huawei</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <h3>Marca la casilla correspondiente</h3>
+            <input type="checkbox" name="vehicle1" class="form-check-input" id="cochet" value="Coche"> Tengo Coche
+            <input type="checkbox" name="vehicle2" class="form-check-input" id="carnet" value="Carnet"> Tengo Carnet de Conducir<br><br>
+            <label for="telef">Enter a phone number:</label><br><br>
+            <input type="tel" id="phone" name="telef" class="form-control" placeholder="922-45-67-28" onkeydown="ingresarTel()" onfocusout="validarTexto(14,allRegExp.telefono)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required><br><br>
+            <small>Format: 999-99-99-99</small><br><br>
+              <input type="button" onclick="validar()" value="Enviar">
+        </fieldset>
+    </form>
+
+   </section>
+
+</div>
+<!-- Incluir un archivo externo de js  -->
+<script src="js/miScript.js"></script>
+<!-- CSS de Bootstrap 5 -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+</body>
+</html>
